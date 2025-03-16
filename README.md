@@ -63,7 +63,7 @@
 
 > **Note:** If you are in android 12 or higher then first disable *Phantom Process Killer* **Guide:-** [Here](https://github.com/atamshkai/Phantom-Process-Killer)
    ```bash
-   curl -Lf https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/refs/heads/main/setup-termux-desktop -o setup-termux-desktop && chmod +x setup-termux-desktop && ./setup-termux-desktop
+   curl -Lf https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/refs/heads/main/setup-termux-desktop -o setup-termux-desktop && chmod +x setup-termux-desktop && ./setup-termux-desktop
    ```
 
 ##### 5. Usage Instructions:
