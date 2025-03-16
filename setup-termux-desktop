@@ -761,14 +761,14 @@ function read_conf() {
 # in the style readme file the name must use this'## number name :' pattern, like:- ## 1. Basic Style:
 function questions_theme_select() {
     local owner="CodeMasterCody3D"
-    local repo="termux-desktop-old"
+    local repo="termux-desktop"
     local main_folder="setup-files/$de_name"
     local subfolder_count_value
     subfolder_count_value=$(count_subfolders "$owner" "$repo" "$main_folder" 2>/dev/null)
     cd "$HOME" || return
     echo "${R}[${C}-${R}]${G} Downloading list....${W}"
     check_and_backup "${current_path}/styles.md"
-    download_file "${current_path}/styles.md" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/${de_name}_styles.md"
+    download_file "${current_path}/styles.md" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/${de_name}_styles.md"
 
     clear
     banner
@@ -812,7 +812,7 @@ function questions_theme_select() {
                 fi
                 echo "${R}[${C}-${R}]${G} Check the $de_name styles section in GitHub${W}"
                 echo
-                echo "${R}[${C}-${R}]${B} https://github.com/CodeMasterCody3D/termux-desktop-old/blob/main/${de_name}_styles.md${W}"
+                echo "${R}[${C}-${R}]${B} https://github.com/CodeMasterCody3D/termux-desktop/blob/main/${de_name}_styles.md${W}"
                 echo
             fi
         done
@@ -943,7 +943,7 @@ function questions() {
 	confirmation_y_or_n "Do you want to Configuring Zsh" zsh_answer
 	banner
 	echo
-	echo "${R}[${C}-${R}]${B} Know More About Terminal Utility:- https://github.com/CodeMasterCody3D/termux-desktop-old/blob/main/see-more.md#hammer_and_wrenchlearn-about-terminal-utilities${W}"
+	echo "${R}[${C}-${R}]${B} Know More About Terminal Utility:- https://github.com/CodeMasterCody3D/termux-desktop/blob/main/see-more.md#hammer_and_wrenchlearn-about-terminal-utilities${W}"
 	echo
 	confirmation_y_or_n "Do you want install some terminal utility to make better terminal exprience" terminal_utility_setup_answer
 	if [[ "$de_name" != "mate" ]]; then
@@ -1012,7 +1012,7 @@ It will help you to install app that aren't avilable in termux.
 So it will setup a linux distro container and add option to install those apps.
 Also you can launch those installed apps from termux like other apps.
 "
-echo "Learn More:- https://github.com/CodeMasterCody3D/termux-desktop-old/blob/main/proot-caontainer.md"
+echo "Learn More:- https://github.com/CodeMasterCody3D/termux-desktop/blob/main/proot-caontainer.md"
 echo
 	confirmation_y_or_n "Do you want to add a Linux container" distro_add_answer
 	echo "distro_add_answer=\"$distro_add_answer\"" >> "$config_file"
@@ -1101,7 +1101,7 @@ function exp_termux_gl_hw_support() {
 	banner
 	echo "${R}[${C}-${R}]${G}${BOLD} First Read This${W}"
 	echo
-	echo "${R}[${C}-${R}]${B} This:- https://github.com/CodeMasterCody3D/termux-desktop-old/blob/main/hw-acceleration.md${W}"
+	echo "${R}[${C}-${R}]${B} This:- https://github.com/CodeMasterCody3D/termux-desktop/blob/main/hw-acceleration.md${W}"
 	echo
 	echo "${R}[${C}-${R}]${G}${BOLD} It will be used to enable opengl support${W}"
 	echo
@@ -1195,7 +1195,7 @@ function hw_questions() {
 	else
     echo "${R}[${C}-${R}]${G}${BOLD} First Read This${W}"
     echo
-    echo "${R}[${C}-${R}]${B} This:- https://github.com/CodeMasterCody3D/termux-desktop-old/blob/main/hw-acceleration.md${W}"
+    echo "${R}[${C}-${R}]${B} This:- https://github.com/CodeMasterCody3D/termux-desktop/blob/main/hw-acceleration.md${W}"
     echo
     echo "${R}[${C}-${R}]${G}${BOLD} Select Hardware Acceleration API${W}"
     echo
@@ -1634,11 +1634,11 @@ function theme_installer() {
     echo "${R}[${C}-${R}]${G}${BOLD} Configuring Wallpapers...${W}"
     echo
     check_and_create_directory "$PREFIX/share/backgrounds"
-    download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/setup-files/${de_name}/look_${style_answer}/wallpaper.tar.gz" "$PREFIX/share/backgrounds/"
+    download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/setup-files/${de_name}/look_${style_answer}/wallpaper.tar.gz" "$PREFIX/share/backgrounds/"
 
     banner
     check_and_create_directory "$icons_folder"
-    download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/setup-files/${de_name}/look_${style_answer}/icon.tar.gz" "$icons_folder"
+    download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/setup-files/${de_name}/look_${style_answer}/icon.tar.gz" "$icons_folder"
 
     if [[ "$de_name" == "xfce" ]]; then
         local icons_themes_names
@@ -1665,7 +1665,7 @@ function theme_installer() {
     echo "${R}[${C}-${R}]${G}${BOLD} Installing Theme...${W}"
     echo
     check_and_create_directory "$themes_folder"
-    download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/setup-files/${de_name}/look_${style_answer}/theme.tar.gz" "$themes_folder"
+    download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/setup-files/${de_name}/look_${style_answer}/theme.tar.gz" "$themes_folder"
 
     echo "${R}[${C}-${R}]${G} Making Additional Configuration...${W}"
     echo
@@ -1677,9 +1677,9 @@ function theme_installer() {
     done
 
     if [[ "$de_name" == "openbox" ]]; then
-        download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/setup-files/${de_name}/look_${style_answer}/config.tar.gz" "$HOME"
+        download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/setup-files/${de_name}/look_${style_answer}/config.tar.gz" "$HOME"
     else
-        download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/setup-files/${de_name}/look_${style_answer}/config.tar.gz" "$HOME/.config/"
+        download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/setup-files/${de_name}/look_${style_answer}/config.tar.gz" "$HOME/.config/"
     fi
 
     if [ $? -ne 0 ]; then
@@ -1792,7 +1792,7 @@ function hw_config() {
 
     if [[ -f ${current_path}/enable-hw-acceleration ]]; then
         local current_script_hash
-        current_script_hash=$(curl -sL https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/enable-hw-acceleration | sha256sum | cut -d ' ' -f 1)
+        current_script_hash=$(curl -sL https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/enable-hw-acceleration | sha256sum | cut -d ' ' -f 1)
         local local_script_hash
         local_script_hash=$(sha256sum "${current_path}/enable-hw-acceleration" | cut -d ' ' -f 1)
 
@@ -1804,7 +1804,7 @@ function hw_config() {
 
             if [[ "$change_old_hw_installer" == "y" ]]; then
                 check_and_backup "${current_path}/enable-hw-acceleration"
-                download_file "${current_path}/enable-hw-acceleration" https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/enable-hw-acceleration
+                download_file "${current_path}/enable-hw-acceleration" https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/enable-hw-acceleration
 				chmod +x "${current_path}/enable-hw-acceleration"
                 . "${current_path}"/enable-hw-acceleration
             else
@@ -1820,7 +1820,7 @@ function hw_config() {
             . "${current_path}"/enable-hw-acceleration
         fi
     else
-        download_file "${current_path}/enable-hw-acceleration" https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/enable-hw-acceleration
+        download_file "${current_path}/enable-hw-acceleration" https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/enable-hw-acceleration
 		chmod +x "${current_path}/enable-hw-acceleration"
         . "${current_path}"/enable-hw-acceleration
     fi
@@ -1849,7 +1849,7 @@ function distro_container_setup() {
 
         if [[ -f "${current_path}/distro-container-setup" ]]; then
             local current_script_hash
-            current_script_hash=$(curl -sL https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/distro-container-setup | sha256sum | cut -d ' ' -f 1)
+            current_script_hash=$(curl -sL https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/distro-container-setup | sha256sum | cut -d ' ' -f 1)
             local local_script_hash
             local_script_hash=$(basename "$(sha256sum "${current_path}/distro-container-setup" | cut -d ' ' -f 1)")
 
@@ -1860,7 +1860,7 @@ function distro_container_setup() {
 
                 if [[ "$change_old_distro_installer" == "y" ]]; then
                     check_and_backup "${current_path}/distro-container-setup"
-                    download_file "${current_path}/distro-container-setup" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/distro-container-setup"
+                    download_file "${current_path}/distro-container-setup" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/distro-container-setup"
 
                     chmod +x "${current_path}/distro-container-setup"
                     . "${current_path}/distro-container-setup"
@@ -1877,7 +1877,7 @@ function distro_container_setup() {
                 . "${current_path}/distro-container-setup"
             fi
         else
-            download_file "${current_path}/distro-container-setup" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/distro-container-setup"
+            download_file "${current_path}/distro-container-setup" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/distro-container-setup"
 
             # Check if arguments are passed
             if [[ ("$1" == "--change" || "$1" == "-c") && ("$2" == "distro" || "$2" == "pd") ]]; then
@@ -2644,7 +2644,7 @@ function terminal_utility_setup() {
 	check_and_backup "$PREFIX/etc/motd"
 	check_and_backup "$PREFIX/etc/motd-playstore"
     check_and_backup "$PREFIX/etc/motd.sh"
-	download_file "$PREFIX/etc/motd.sh" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/other/motd.sh"
+	download_file "$PREFIX/etc/motd.sh" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/other/motd.sh"
 	if grep -q "motd.sh$" "$PREFIX/etc/termux-login.sh"; then
 	sed -i "s|.*motd\.sh$|bash $PREFIX/etc/motd.sh|" "$PREFIX/etc/termux-login.sh"
     else
@@ -2654,10 +2654,10 @@ function terminal_utility_setup() {
 	check_and_backup "$HOME/.termux/colors.properties $HOME/.termux/termux.properties $HOME/.aliases"
 
 	check_and_create_directory "$HOME/.config/fastfetch"
-	download_file "$HOME/.config/fastfetch/config.jsonc" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/other/config.jsonc" 
-	download_file "$HOME/.termux/termux.properties" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/other/termux.properties"
-	download_file "$HOME/.aliases" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/other/.aliases"
-	download_file "$HOME/.termux/colors.properties" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/other/colors.properties"
+	download_file "$HOME/.config/fastfetch/config.jsonc" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/other/config.jsonc" 
+	download_file "$HOME/.termux/termux.properties" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/other/termux.properties"
+	download_file "$HOME/.aliases" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/other/.aliases"
+	download_file "$HOME/.termux/colors.properties" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/other/colors.properties"
 	download_file "$PREFIX/bin/termux-ssh" "https://raw.githubusercontent.com/CodeMasterCody3D/simple-linux-scripts/main/termux-ssh" && chmod +x "$PREFIX/bin/termux-ssh"
 	cp "$shell_rc_file" "${shell_rc_file}-2"
 	check_and_backup "$shell_rc_file"
@@ -2772,7 +2772,7 @@ function install_fm_tools() {
 		check_and_backup "nautilus-scripts"
 		git clone https://github.com/CodeMasterCody3D/nautilus-scripts
 		cd nautilus-scripts
-    	wget --tries=5 --retry-connrefused https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/other/setup-termux.sh
+    	wget --tries=5 --retry-connrefused https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/other/setup-termux.sh
 		bash setup-termux.sh
 		cd ..
 		check_and_delete "nautilus-scripts"
@@ -2808,7 +2808,7 @@ function setup_fonts() {
 #########################################################################
 
 function run_wine_shortcut_script() {
-	download_file "${current_path}/add-wine-shortcut" https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/other/add-wine-shortcut
+	download_file "${current_path}/add-wine-shortcut" https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/other/add-wine-shortcut
 	chmod +x "${current_path}/add-wine-shortcut"
     . "${current_path}"/add-wine-shortcut
 	check_and_delete "add-wine-shortcut"
@@ -2917,7 +2917,7 @@ function cleanup_cache() {
 
 function add_common_function() {
 	check_and_delete "$PREFIX/etc/termux-desktop/common_functions"
-cat <<'EOF' > "$PREFIX/etc/termux-desktop-old/common_functions"
+cat <<'EOF' > "$PREFIX/etc/termux-desktop/common_functions"
 #!/data/data/com.termux/files/usr/bin/bash
 
 R="$(printf '\033[1;31m')"
@@ -2931,10 +2931,10 @@ BOLD="$(printf '\033[1m')"
 cd "$HOME" || exit
 termux_desktop_path="$PREFIX/etc/termux-desktop"
 config_file="$termux_desktop_path/configuration.conf"
-log_file="$HOME/termux-desktop-old.log"
+log_file="$HOME/termux-desktop.log"
 EOF
-typeset -f check_termux print_log print_success print_failed wait_for_keypress check_and_create_directory check_and_delete check_and_backup download_file check_and_restore detact_package_manager package_install_and_check package_check_and_remove get_file_name_number extract_zip_with_progress extract_archive download_and_extract count_subfolders confirmation_y_or_n get_latest_release install_font_for_style select_an_option preprocess_conf read_conf >> "$PREFIX/etc/termux-desktop-old/common_functions"
-chmod +x "$PREFIX/etc/termux-desktop-old/common_functions"
+typeset -f check_termux print_log print_success print_failed wait_for_keypress check_and_create_directory check_and_delete check_and_backup download_file check_and_restore detact_package_manager package_install_and_check package_check_and_remove get_file_name_number extract_zip_with_progress extract_archive download_and_extract count_subfolders confirmation_y_or_n get_latest_release install_font_for_style select_an_option preprocess_conf read_conf >> "$PREFIX/etc/termux-desktop/common_functions"
+chmod +x "$PREFIX/etc/termux-desktop/common_functions"
 }
 
 function delete_installer_file() {
@@ -2957,12 +2957,12 @@ function notes() {
 	echo
 	echo "${R}[${C}-${R}]${C}${BOLD} See Uses Section in github to know how to use it${W}"
 	echo
-	echo "${R}[${C}-${R}]${C} URL:- ${B}https://github.com/CodeMasterCody3D/termux-desktop-old/blob/main/README.md#uses${W}"
+	echo "${R}[${C}-${R}]${C} URL:- ${B}https://github.com/CodeMasterCody3D/termux-desktop/blob/main/README.md#uses${W}"
 	echo
 	if [[ "$distro_add_answer" == "y" ]]; then
 	echo "${R}[${C}-${R}]${C}${BOLD} See how to use Linux distro container${W}"
 	echo
-	echo "${R}[${C}-${R}]${C} URL:- ${B}https://github.com/CodeMasterCody3D/termux-desktop-old/blob/main/proot-caontainer.md${W}"
+	echo "${R}[${C}-${R}]${C} URL:- ${B}https://github.com/CodeMasterCody3D/termux-desktop/blob/main/proot-caontainer.md${W}"
 	fi
 }
 
@@ -3069,7 +3069,7 @@ function remove_termux_desktop() {
 	package_check_and_remove "gtk2-engines-murrine"
 	fi
 	#Remove folders and other files
-	check_and_delete "$PREFIX/share/backgrounds $themes_folder $icons_folder $PREFIX/etc/termux-desktop-old"
+	check_and_delete "$PREFIX/share/backgrounds $themes_folder $icons_folder $PREFIX/etc/termux-desktop"
 	check_and_delete "$HOME/.config/$the_config_dir"
 	check_and_delete "$HOME/Desktop $HOME/Downloads $HOME/Videos $HOME/Pictures $HOME/Music"
 	#remove hw packages
@@ -3097,7 +3097,7 @@ function remove_termux_desktop() {
 	check_and_delete "${PREFIX}/opt/appstore"
 	check_and_delete "${PREFIX}/share/applications/org.CodeMasterCody3D.termux.appstore.desktop"
 	fi
-	check_and_delete "$PREFIX/etc/termux-desktop-old $PREFIX/bin/setup-termux-desktop"
+	check_and_delete "$PREFIX/etc/termux-desktop $PREFIX/bin/setup-termux-desktop"
 	clear
 	echo "${R}[${C}-${R}]${G}${BOLD} Everything remove successfully${W}"
 	fi
@@ -3342,7 +3342,7 @@ function reinstall_themes() {
 	tmp_themes_folder="$PREFIX/tmp/themes"
 	check_and_create_directory "$tmp_themes_folder"
 	echo "${R}[${C}-${R}]${G} Reinstalling Themes...${W}"
-	download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/setup-files/${de_name}/look_${style_answer}/theme.tar.gz" "$tmp_themes_folder"
+	download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/setup-files/${de_name}/look_${style_answer}/theme.tar.gz" "$tmp_themes_folder"
 	local theme_names
 	theme_names=$(ls "$tmp_themes_folder")
 	local theme_name
@@ -3369,7 +3369,7 @@ function reinstall_icons() {
 	package_install_and_check "fluent-icon-theme"
 	else
 	echo "${R}[${C}-${R}]${G} Reinstalling Icons...${W}"
-	download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/setup-files/${de_name}/look_${style_answer}/icon.tar.gz" "$tmp_icons_folder"
+	download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/setup-files/${de_name}/look_${style_answer}/icon.tar.gz" "$tmp_icons_folder"
 	local icon_themes_names
 	icon_themes_names=$(ls "$tmp_icons_folder")
 	local icon_theme
@@ -3398,7 +3398,7 @@ function reinstall_config() {
 	tmp_config_folder="$PREFIX/tmp/config"
 	check_and_create_directory "$tmp_config_folder"
 	echo "${R}[${C}-${R}]${G} Reinstalling Config...${W}"
-	download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/setup-files/${de_name}/look_${style_answer}/config.tar.gz" "$tmp_config_folder"
+	download_and_extract "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/setup-files/${de_name}/look_${style_answer}/config.tar.gz" "$tmp_config_folder"
 	local config_file_names
 	config_file_names=$(ls "$tmp_config_folder")
 	local config_file
@@ -3490,7 +3490,7 @@ EOF
 function add_installer() {
 	if [[ ! -e "$PREFIX/bin/setup-termux-desktop" ]]; then
 		echo "${R}[${C}-${R}]${G} Adding setup-termux-desktop installer to bin${W}"
-    	download_file "$PREFIX/bin/setup-termux-desktop" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/setup-termux-desktop"
+    	download_file "$PREFIX/bin/setup-termux-desktop" "https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/setup-termux-desktop"
     	chmod +x "$PREFIX/bin/setup-termux-desktop"
 	fi
 }
@@ -3510,7 +3510,7 @@ function check_for_update_and_update_installer() {
         check_and_create_directory "$termux_desktop_path"
         local current_script_hash
 		local update_installer
-		current_script_hash=$(curl -sL https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop-old/main/setup-termux-desktop | sha256sum | cut -d ' ' -f 1)
+		current_script_hash=$(curl -sL https://raw.githubusercontent.com/CodeMasterCody3D/termux-desktop/main/setup-termux-desktop | sha256sum | cut -d ' ' -f 1)
         local local_script_hash
 		local_script_hash=$(basename "$(sha256sum "$PREFIX/bin/setup-termux-desktop" | cut -d ' ' -f 1)")
 
@@ -3518,9 +3518,9 @@ function check_for_update_and_update_installer() {
             confirmation_y_or_n "You are using an old installer. Do you want to update it to the latest version" update_installer
 
             if [[ "$update_installer" == "y" ]]; then
-				check_and_create_directory "$PREFIX/etc/termux-desktop-old"
-                mv "$PREFIX/bin/setup-termux-desktop" "$PREFIX/etc/termux-desktop-old/"
-                check_and_backup "$PREFIX/etc/termux-desktop-old/setup-termux-desktop"
+				check_and_create_directory "$PREFIX/etc/termux-desktop"
+                mv "$PREFIX/bin/setup-termux-desktop" "$PREFIX/etc/termux-desktop/"
+                check_and_backup "$PREFIX/etc/termux-desktop/setup-termux-desktop"
                 add_installer
                 add_common_function
 				unset local_script_hash
@@ -3701,7 +3701,7 @@ update_sys
 sleep 2
 termux-wake-lock
 sleep 2
-check_and_create_directory "$PREFIX/etc/termux-desktop-old"
+check_and_create_directory "$PREFIX/etc/termux-desktop"
 touch "$config_file"
 print_basic_details
 add_common_function
